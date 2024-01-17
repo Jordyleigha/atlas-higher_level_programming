@@ -17,8 +17,8 @@ def matrix_divided(matrix, div):
     )
     size = [0, 0]
     res = []
-    if not isinstance(matirx, list):
-        raise TypeError(messgaes[0])
+    if not isinstance(matrix, list):
+        raise TypeError(messages[0])
     size[0] = len(matrix)
     if size[0] == 0:
         raise TypeError(messages[0])
@@ -38,7 +38,7 @@ def matrix_divided(matrix, div):
     if not isinstance(div, (int, float)):
         raise TypeError(messages[2])
     elif div == 0:
-        raise ZeroDivisionError(message[3])
+        raise ZeroDivisionError(messages[3])
     else:
         for row in matrix:
             res_row = list(map(lambda x: round(x / div, 2), row))
