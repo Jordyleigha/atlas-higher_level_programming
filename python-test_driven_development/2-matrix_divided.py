@@ -1,19 +1,19 @@
 #!/usr/bin/python3
 
 def matrix_divided(matrix, div):
-    """Divides all elements of a matrix.
+    '''Divides all elements of a matrix.
     Args:
         matrix (list): The matrix whose elements are to be divided.
         div (int): The number to use as a divisor.
     Returns:
-        list: A new list consiting of the result of the dividing each element in the given 
-        matrix by div.
-    """
+        list: A new list consiting of the result of dividing each element
+        in the given matrix by div.
+    '''
     messages = (
-            'matrix must be a matrix (list of lists) of the integers/floats',
-            'Each row of the matrix must have the same size',
-            'div must be a number',
-            'division by zero'
+        'matrix must be a matrix (list of lists) of integers/floats',
+        'Each row of the matrix must have the same size',
+        'div must be a number',
+        'division by zero'
     )
     size = [0, 0]
     res = []
