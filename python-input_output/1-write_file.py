@@ -1,16 +1,19 @@
 #!/usr/bin/python3
-"""A module containing IO functions."""
+""" Module that contains a function that writes to a text file
+"""
 
 
 def write_file(filename="", text=""):
-    """Writes a UTF-8 encoded text to a file.
+    """ Function that writes to a text file
+
     Args:
-        filename (str): The name of the file to write to.
-        text (str): The content to store in the file.
-    Returns:
-        int: The number of the characters written.
+        filename: filename
+        text: text to write
+
+    Raises
+        Exception: when the file can be opened
+
     """
-    n = 0
-    with open(filename, mode='w', encoding'utf-8') as file:
-        n = file.write(text)
-    return n
+
+    with open(filename, 'w', encoding="utf-8") as f:
+        return f.write(text)
