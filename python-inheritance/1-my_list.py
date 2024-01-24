@@ -1,13 +1,16 @@
 #!/usr/bin/python3
-"""Contains the MyList Class."""
+"""Defines a class-checking function."""
 
 
-class MyList(list):
-    """a subclass of list"""
-    def __init__(self):
-        """intializes the object"""
-        super().__init__()
-
-        def print_sorted(self):
-            """prints the sorted list"""
-            print(sorted(self))
+def is_same_class(obj, a_class):
+    """Check if an object is exactly an instance of a given class.
+    Args:
+        obj (any): The object to check.
+        a_class (type): The class to match the type of obj to.
+    Returns:
+        If obj is exactly an instance of a_class - True.
+        Otherwise - False.
+        """
+        if type(obj) == a_class:
+            return True
+        return False
