@@ -1,23 +1,22 @@
 #!/usr/bin/python3
-""" Script that lists all states from the database hbtn_0e_0_usa """
+""" module to utilize python ORM to run simple sql query """
+
+
 import MySQLdb
-from sys import argv
+import sys
 
-# The code should not be executed when imported
-if __name__ == '__main__':
-
-    # make a connection to the database
-    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                         passwd=argv[2], db=argv[3])
-
-    # It gives us the ability to have multiple seperate working environments
-    # through the same connection to the database.
-    cur = db.cursor()
-    cur.execute("SELECT * FROM states")
-
-    rows = cur.fetchall()
-    for i in rows:
-        print(i)
-    # Clean up process
-    cur.close()
-    db.close()
+if __name__ == "__main__":
+    connection = MySQLdb.connect(
+        host="localhost",
+        user=sys.argv[1],
+        password=sys.argv[2],
+        database=sys.argv[3]
+        )
+    cursor = connection.cursor()
+    query = "SELECT id, name FROM states ORDER BY states.id ASC"
+    cursor.execute(query)
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
+    cursor.close()
+    connection.close()
