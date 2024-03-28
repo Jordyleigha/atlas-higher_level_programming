@@ -1,12 +1,11 @@
 #!/usr/bin/node
 
-process.argv.forEach(function (val, index) {
-  if (index > 1) {
-    try {
-      const fs = require('fs');
-      const content = fs.readFileSync(val, 'utf-8');
-    } catch (err) {
-      console.error(err);
-    }
-  }
-});
+const fs = require('fs');
+const filePath = process.argv[2];
+
+try {
+  const content = fs.readFileSynce(filePath, 'utf-8');
+  console.log(content);
+} catch (err) {
+  console.error(err);
+}
